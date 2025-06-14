@@ -1,0 +1,32 @@
+{% extends "dashboard/base.html" %}
+{% block title %}
+SHOW
+{% endblock  %}
+
+{%block body%}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">IMAGE</th>
+      <th scope="col">TITLE</th>
+      <th scope="col">CONTEXT</th>
+      <th scope="col">ACTION</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for post in posts%}
+    <tr>
+        <th scope="row">{{post.id}}</th>
+        <td><img src="{{post.image.url}}" height='200px' ></td>
+        <td>{{post.title}}</td>
+        <td>{{post.context}}</td>
+        <td>
+          <a class="btn btn-primary" href="{% url 'update_post' post_id=post.id %}" value="UPDATE">UPDATE</a>
+          <a class="btn btn-danger" href="{% url 'delete_post' post_id=post.id %}" value="DELETE">DELETE</a>
+        </td>        
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{%endblock%}

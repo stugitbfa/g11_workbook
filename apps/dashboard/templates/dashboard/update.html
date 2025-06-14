@@ -1,0 +1,29 @@
+{% extends "dashboard/base.html" %}
+{% block title %}
+UPDATE
+{% endblock  %}
+{%block body%}
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-6">
+            <fieldset>
+                <legend class="text-center mb-3">
+                    UPDATE FORM
+                </legend>
+                <form action="{% url 'update_post' post_id=post.id %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <img src="{{post.image.url}}" width="100px">
+                    <label for="">Upload Image</label>
+                    <input type="file" name="post_image" class="form-control mb-5">
+                    <label for="">Title</label>
+                    <input type="text" name="title" class="form-control mb-5" value="{{post.title}}">
+                    <label for="">Context</label>
+                    <textarea name="context" class="form-control mb-5">{{post.context}}</textarea>
+                    <button value="submit" class="btn btn-dark text-white">UPDATE</button>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</div>
+{%endblock%}

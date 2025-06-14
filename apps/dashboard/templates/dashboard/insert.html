@@ -1,0 +1,28 @@
+{% extends "dashboard/base.html" %}
+{% block title %}
+INSERT
+{% endblock  %}
+{%block body%}
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-6">
+            <fieldset>
+                <legend class="text-center mb-3">
+                    INSERT FORM
+                </legend>
+                <form action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <label for="">Upload Image</label>
+                    <input type="file" name="post_image" class="form-control mb-5">
+                    <label for="">Title</label>
+                    <input type="text" name="title" class="form-control mb-5">
+                    <label for="">Context</label>
+                    <textarea name="context" class="form-control mb-5"></textarea>
+                    <button value="submit" class="btn btn-dark text-white">Submit</button>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</div>
+{%endblock%}
