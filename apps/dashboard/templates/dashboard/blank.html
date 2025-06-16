@@ -1,35 +1,24 @@
-{% load static %}
 <!DOCTYPE html>
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}  {% endblock %} | Workbook</title>
+    <title>Blank - Windmill Dashboard</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="{% static 'dashboard/assets/css/tailwind.output.css' %}" />
+    <link rel="stylesheet" href="../assets/css/tailwind.output.css" />
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
       defer
     ></script>
-    <script src="{% static 'dashboard/assets/js/init-alpine.js' %}"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css"
-    />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
-      defer
-    ></script>
-    <script src="{% static 'dashboard/assets/js/charts-lines.js' %}" defer></script>
-    <script src="{% static 'dashboard/assets/js/charts-pie.js' %}" defer></script>
+    <script src="../assets/js/init-alpine.js"></script>
   </head>
   <body>
     <div
       class="flex h-screen bg-gray-50 dark:bg-gray-900"
-      :class="{ 'overflow-hidden': isSideMenuOpen }"
+      :class="{ 'overflow-hidden': isSideMenuOpen}"
     >
       <!-- Desktop sidebar -->
       <aside
@@ -40,17 +29,21 @@
             class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
             href="#"
           >
-            Workbook
+            Windmill
           </a>
           <ul class="mt-6">
             <li class="relative px-6 py-3">
-              <span
+              <!-- Active items have the snippet below -->
+              <!-- <span
                 class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                 aria-hidden="true"
-              ></span>
+              ></span> -->
+
+              <!-- Add this classes to an active anchor (a tag) -->
+              <!-- text-gray-800 dark:text-gray-100 -->
               <a
-                class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                href="index.html"
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../index.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -74,7 +67,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="forms.html"
+                href="../forms.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -96,7 +89,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="cards.html"
+                href="../cards.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -118,7 +111,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="charts.html"
+                href="../charts.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -141,7 +134,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="buttons.html"
+                href="../buttons.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -163,7 +156,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="modals.html"
+                href="../modals.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -185,7 +178,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="tables.html"
+                href="../tables.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -252,31 +245,31 @@
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="pages/login.html">Login</a>
+                    <a class="w-full" href="./login.html">Login</a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="pages/create-account.html">
+                    <a class="w-full" href="./create-account.html">
                       Create account
                     </a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="pages/forgot-password.html">
+                    <a class="w-full" href="./forgot-password.html">
                       Forgot password
                     </a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="pages/404.html">404</a>
+                    <a class="w-full" href="./404.html">404</a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="pages/blank.html">Blank</a>
+                    <a class="w-full" href="./blank.html">Blank</a>
                   </li>
                 </ul>
               </template>
@@ -321,17 +314,21 @@
             class="ml-6 text-lg font-bold text-gray-800 dark:text-gray-200"
             href="#"
           >
-            Workbook
+            Windmill
           </a>
           <ul class="mt-6">
             <li class="relative px-6 py-3">
-              <span
+              <!-- Active items have the snippet below -->
+              <!-- <span
                 class="absolute inset-y-0 left-0 w-1 bg-purple-600 rounded-tr-lg rounded-br-lg"
                 aria-hidden="true"
-              ></span>
+              ></span> -->
+
+              <!-- Add this classes to an active anchor (a tag) -->
+              <!-- text-gray-800 dark:text-gray-100 -->
               <a
-                class="inline-flex items-center w-full text-sm font-semibold text-gray-800 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200 dark:text-gray-100"
-                href="index.html"
+                class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
+                href="../index.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -355,7 +352,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="forms.html"
+                href="../forms.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -377,7 +374,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="cards.html"
+                href="../cards.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -399,7 +396,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="charts.html"
+                href="../charts.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -422,7 +419,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="buttons.html"
+                href="../buttons.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -444,7 +441,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="modals.html"
+                href="../modals.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -466,7 +463,7 @@
             <li class="relative px-6 py-3">
               <a
                 class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="tables.html"
+                href="../tables.html"
               >
                 <svg
                   class="w-5 h-5"
@@ -533,31 +530,31 @@
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="pages/login.html">Login</a>
+                    <a class="w-full" href="./login.html">Login</a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="pages/create-account.html">
+                    <a class="w-full" href="./create-account.html">
                       Create account
                     </a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="pages/forgot-password.html">
+                    <a class="w-full" href="./forgot-password.html">
                       Forgot password
                     </a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="pages/404.html">404</a>
+                    <a class="w-full" href="./404.html">404</a>
                   </li>
                   <li
                     class="px-2 py-1 transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
                   >
-                    <a class="w-full" href="pages/blank.html">Blank</a>
+                    <a class="w-full" href="./blank.html">Blank</a>
                   </li>
                 </ul>
               </template>
@@ -573,14 +570,14 @@
           </div>
         </div>
       </aside>
-      <div class="flex flex-col flex-1 w-full">
+      <div class="flex flex-col flex-1">
         <header class="z-10 py-4 bg-white shadow-md dark:bg-gray-800">
           <div
             class="container flex items-center justify-between h-full px-6 mx-auto text-purple-600 dark:text-purple-300"
           >
             <!-- Mobile hamburger -->
             <button
-              class="p-1 mr-5 -ml-1 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple"
+              class="p-1 -ml-1 mr-5 rounded-md md:hidden focus:outline-none focus:shadow-outline-purple"
               @click="toggleSideMenu"
               aria-label="Menu"
             >
@@ -693,6 +690,7 @@
                     @click.away="closeNotificationsMenu"
                     @keydown.escape="closeNotificationsMenu"
                     class="absolute right-0 w-56 p-2 mt-2 space-y-2 text-gray-600 bg-white border border-gray-100 rounded-md shadow-md dark:text-gray-300 dark:border-gray-700 dark:bg-gray-700"
+                    aria-label="submenu"
                   >
                     <li class="flex">
                       <a
@@ -830,9 +828,15 @@
             </ul>
           </div>
         </header>
-        <main class="h-full overflow-y-auto">
-          {% block body %}
-          {% endblock %}
+        <main class="h-full pb-16 overflow-y-auto">
+          <!-- Remove everything INSIDE this div to a really blank page -->
+          <div class="container px-6 mx-auto grid">
+            <h2
+              class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200"
+            >
+              Blank
+            </h2>
+          </div>
         </main>
       </div>
     </div>

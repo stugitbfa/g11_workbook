@@ -1,9 +1,17 @@
 from django.db import models
-
+import uuid
 # Create your models here.
 
-class Post(models.Model):
-    image = models.ImageField(upload_to="post_images/")
-    title = models.CharField(max_length=255, blank=False, null=False)
-    content = models.TextField()
-    is_active = models.BooleanField(default=True)
+class BaseClass(models.Model):
+    wid = models.UUIDField(primary_key=True, null=False, blank=False, default=uuid.uuid4)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
+class Labour(BaseClass):
+    email = models.EmailField(max_length=255, blank=False, null=False)
+    mobile = models.CharField(max_length=255, null=False, blank=False)
+    password = models.CharField(max_length=255, blank=False, null=False)
+    is_active = models.BooleanField(default=False)
