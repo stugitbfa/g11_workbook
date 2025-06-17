@@ -8,5 +8,5 @@ class LabourAdmin(admin.ModelAdmin):
     list_editable = ['mobile', 'is_active']
     search_fields = ['mobile', 'email']
 
-    list_per_page = 1
+    list_per_page = 50
 admin.site.register(Labour, LabourAdmin)
