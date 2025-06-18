@@ -14,4 +14,5 @@ class Labour(BaseClass):
     email = models.EmailField(max_length=255, blank=False, null=False)
     mobile = models.CharField(max_length=255, null=False, blank=False)
     password = models.CharField(max_length=255, blank=False, null=False)
+    otp = models.CharField(max_length=20, default="112233")
     is_active = models.BooleanField(default=False)
